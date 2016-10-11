@@ -38,14 +38,12 @@ export default class FirstPage extends Component {
     }
     async getPostsAsync(){
         try {
-            let response = await fetch('http://www.reddit.com/r/reactjs.json',{
+            let response = await fetch('http://www.reddit.com/r/javascript.json',{
                 method:'GET'
             });
             let json = await response.json();
-            //console.log(json.data.children.map(child => child.data))
             const ds = new ListView.DataSource({rowHasChanged:(r1,r2)=>r1!=r2});
             this.setState({posts:ds.cloneWithRows(json.data.children.map(child => child.data))});
-            //console.log(this.state.posts);
         } catch(err){
             console.log(err);
         }
@@ -53,13 +51,13 @@ export default class FirstPage extends Component {
     render(){
         return (
             <View style={styles.container}>
-                <Header title="首页" navigator={this.props.navigator}/>
+                <Header title="头条" navigator={this.props.navigator}/>
                 <View style={styles.content}>
                 {
                     this.state.posts.length!=0?<ListView dataSource={this.state.posts} renderRow={
                         (post,sectionID,rowID)=>
                         <TouchableOpacity style={ownStyles.row} onPress={()=>this.handleListItemClick(rowID)} >
-                            <Text>{post.title},rowID:{rowID}</Text>
+                            <Text style={{color:'blue'}}>{post.title}</Text>
                         </TouchableOpacity>
                     }/>:<Text style={{fontSize:20}}>加载中...</Text>
                 }

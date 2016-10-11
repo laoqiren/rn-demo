@@ -16,7 +16,7 @@ export default class About extends Component {
             <View style={styles.container}>
                 <Header navigator={this.props.navigator} title="关于"/>
                 <View style={aboutStyle.content}>
-                    <Text>
+                    <Text style={{fontSize:20}}>
                         软件作者：laoqiren
                         软件版本: 0.0.1
                     </Text>

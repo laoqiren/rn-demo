@@ -18,7 +18,7 @@ export default class Footer extends Component {
                     <View style={{flex:1}}>
                         <TouchableOpacity onPress={()=>this.props.navigator.push({
                             component:FirstPage
-                        })} style={styles.button}><Text style={styles.buttonText}>首页</Text></TouchableOpacity>
+                        })} style={styles.button}><Text style={styles.buttonText}>头条</Text></TouchableOpacity>
                     </View>
                     <View style={{flex:1}}>
                         <TouchableOpacity onPress={()=>this.props.navigator.push({
@@ -26,7 +26,7 @@ export default class Footer extends Component {
                             passProps:{
                                 text:'hello'
                             }
-                        })} style={styles.button}><Text style={styles.buttonText}>我的</Text></TouchableOpacity>
+                        })} style={styles.button}><Text style={styles.buttonText}>技术博客</Text></TouchableOpacity>
                     </View>
                     <View style={{flex:1}}>
                         <TouchableOpacity onPress={()=>this.props.navigator.push({
